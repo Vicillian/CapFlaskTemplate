@@ -17,6 +17,8 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me?')
     submit = SubmitField()
+    #role = SelectField('Role', choices = [("Teacher", "Teacher"), ("Student", "Student")])
+    #favColor = SelectField('Favorite Color', choices = [("Blue", "Blue"), ("Yellow", "Yellow")])
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -58,6 +60,7 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
+    favColor = SelectField('Favorite Color', choices = [("Blue", "Blue"), ("Yellow", "Yellow")])
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

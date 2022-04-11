@@ -24,6 +24,9 @@ class User(UserMixin, Document):
     image = FileField()
     #role = StringField()
     favColor = StringField()
+    proc = StringField()
+    proTime = StringField()
+    woTime = StringField()
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

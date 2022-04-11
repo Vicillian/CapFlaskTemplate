@@ -60,6 +60,11 @@ class ProfileForm(FlaskForm):
     image = FileField("Image") 
     submit = SubmitField('Post')
     favColor = SelectField('Favorite Color', choices = [("Blue", "Blue"), ("Yellow", "Yellow")])
+    proc = SelectField('Type of Procrastinator', choices = [("Super Procrastinator", "Super Procrastinator"), ("Procrastinator", "Procrastinator"), ("Jeff Bezos Delivery", "Jeff Bezos Delivery")])
+
+#To record time procrastinated and time worked
+class procForm(FlaskForm):
+    procrastinatedTime = SelectField('Time Procrastinated', choices = [("0.5  Hours", "0.5  Hours"), ("1 Hours", "1 Hours"), ("1.5 Hours", "1.5 Hours"), ("2 Hours", "2 Hours"), ("2.5 Hours", "2.5 Hours"), ("3 Hours", "3 Hours"), ])
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

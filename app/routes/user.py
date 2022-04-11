@@ -36,6 +36,7 @@ def profileEdit():
             fname = form.fname.data,
             #role = form.role.data,
             favColor = form.favColor.data,
+            proc = form.proc.data
         )
         # This updates the profile image
         if form.image.data:
@@ -53,5 +54,6 @@ def profileEdit():
     form.lname.data = current_user.lname
     #form.role.data = current_user.role
     form.favColor.data = current_user.favColor
+    form.proc.data = current_user.proc
 
     return render_template('profileform.html', form=form)

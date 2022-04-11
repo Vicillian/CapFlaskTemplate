@@ -65,6 +65,7 @@ class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
     submit = SubmitField('Post')
+    postType = SelectField('Type of Post', choices = [("Based", "Based"), ("Requests", "Requests"), ("Demands", "Demands")])
 
 class CommentForm(FlaskForm):
     content = TextAreaField('Comment', validators=[DataRequired()])

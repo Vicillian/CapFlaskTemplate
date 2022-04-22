@@ -72,3 +72,12 @@ class Comment(Document):
     meta = {
         'ordering': ['-createdate']
     }
+class TimeProc(Document): 
+    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+    procTime = StringField()
+    reason = StringField()
+    createdate = DateTimeField(default=dt.datetime.utcnow)
+
+    meta = {
+        'ordering': ['-createdate']
+    }

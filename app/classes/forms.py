@@ -63,8 +63,10 @@ class ProfileForm(FlaskForm):
     proc = SelectField('Type of Procrastinator', choices = [("Super Procrastinator", "Super Procrastinator"), ("Procrastinator", "Procrastinator"), ("Jeff Bezos Delivery", "Jeff Bezos Delivery")])
 
 #To record time procrastinated and time worked
-class procForm(FlaskForm):
+class TimeProcForm(FlaskForm):
+    proc = SelectField('Type of Procrastinator', choices = [("Super Procrastinator", "Super Procrastinator"), ("Procrastinator", "Procrastinator"), ("Jeff Bezos Delivery", "Jeff Bezos Delivery")])
     procrastinatedTime = SelectField('Time Procrastinated', choices = [("0.5  Hours", "0.5  Hours"), ("1 Hours", "1 Hours"), ("1.5 Hours", "1.5 Hours"), ("2 Hours", "2 Hours"), ("2.5 Hours", "2.5 Hours"), ("3 Hours", "3 Hours"), ])
+    submit = SubmitField('Submit')
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

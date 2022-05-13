@@ -35,8 +35,10 @@ def profileEdit():
             lname = form.lname.data,
             fname = form.fname.data,
             #role = form.role.data,
-            favColor = form.favColor.data,
-            proc = form.proc.data
+            #favColor = form.favColor.data,
+            proc = form.proc.data,
+            #Below is data for procrastinated time
+            procrastinatedTime = form.procrastinatedTime.data
         )
         # This updates the profile image
         if form.image.data:
@@ -53,7 +55,8 @@ def profileEdit():
     form.fname.data = current_user.fname
     form.lname.data = current_user.lname
     #form.role.data = current_user.role
-    form.favColor.data = current_user.favColor
+    #form.favColor.data = current_user.favColor
     form.proc.data = current_user.proc
+    form.procrastinatedTime.data = current_user.procrastinatedTime
 
     return render_template('profileform.html', form=form)

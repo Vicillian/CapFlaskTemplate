@@ -2,7 +2,7 @@ from app import app
 import mongoengine.errors
 from flask import render_template, flash, redirect, url_for
 from flask_login import current_user
-from app.classes.data import TimeProc
+from app.classes.data import TimeProc,User
 from app.classes.forms import TimeProcForm
 from flask_login import login_required
 import datetime as dt
@@ -13,7 +13,7 @@ def timeList():
     return render_template('times.html', time=time)
 
 @app.route('/time/<timeID>')
-def timeAmount(timeID):
+def time(timeID):
     thisTime = TimeProc.objects.get(id=timeID)
     return render_template('time.html',time=thisTime)
 
@@ -38,13 +38,18 @@ def timeEdit():
 @app.route('/time/new', methods=['GET', 'POST'])
 @login_required
 def timeNew():
+    currUser = User.objects.get(id=current_user.id)
 
     form = TimeProcForm()
     if form.validate_on_submit():
-        newTime = TimeProc.update(
+        print("validated")
+        currUser.update(
             procrastinatedTime = form.procrastinatedTime.data,
-            modifydate = dt.datetime.utcnow
-        ).save()
-        return redirect(url_for('time',timeID=newTime.id))
+            proc = form.proc.data
+        )
+        return redirect(url_for('myProfile'))
+
+    form.proc.data = current_user.proc
+    form.procrastinatedTime.data = current_user.procrastinatedTime
 
     return render_template('timeprocform.html',form=form)

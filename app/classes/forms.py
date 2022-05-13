@@ -59,20 +59,21 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
-    favColor = SelectField('Favorite Color', choices = [("Blue", "Blue"), ("Yellow", "Yellow")])
+    #favColor = SelectField('Favorite Color', choices = [("Blue", "Blue"), ("Yellow", "Yellow")])
     proc = SelectField('Type of Procrastinator', choices = [("Super Procrastinator", "Super Procrastinator"), ("Procrastinator", "Procrastinator"), ("Jeff Bezos Delivery", "Jeff Bezos Delivery")])
+    procrastinatedTime = SelectField('Time Procrastinated', choices = [("1  Hours", "1  Hours"), ("2 Hours", "2 Hours"), ("3 Hours", "3 Hours"), ("4 Hours", "4 Hours"), ("5 Hours", "5 Hours"), ("6 Hours", "6 Hours"), ])
 
 #To record time procrastinated and time worked
 class TimeProcForm(FlaskForm):
     proc = SelectField('Type of Procrastinator', choices = [("Super Procrastinator", "Super Procrastinator"), ("Procrastinator", "Procrastinator"), ("Jeff Bezos Delivery", "Jeff Bezos Delivery")])
-    procrastinatedTime = SelectField('Time Procrastinated', choices = [("0.5  Hours", "0.5  Hours"), ("1 Hours", "1 Hours"), ("1.5 Hours", "1.5 Hours"), ("2 Hours", "2 Hours"), ("2.5 Hours", "2.5 Hours"), ("3 Hours", "3 Hours"), ])
+    procrastinatedTime = SelectField('Time Procrastinated', choices = [("1  Hours", "1  Hours"), ("2 Hours", "2 Hours"), ("3 Hours", "3 Hours"), ("4 Hours", "4 Hours"), ("5 Hours", "5 Hours"), ("6 Hours", "6 Hours"), ])
     submit = SubmitField('Submit')
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
     submit = SubmitField('Post')
-    postType = SelectField('Type of Post', choices = [("Based", "Based"), ("Requests", "Requests"), ("Demands", "Demands")])
+    postType = SelectField('Type of Post', choices = [("Based", "Based"), ("Requests", "Requests"), ("Demands", "Demands"), ("Help Me", "Help Me")])
 
 class CommentForm(FlaskForm):
     content = TextAreaField('Comment', validators=[DataRequired()])

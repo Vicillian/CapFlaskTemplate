@@ -2,7 +2,17 @@
 
 {% block body %}
 
-    <h1>Register</h1>
+    <h1>Customize your profile here</h1>
+
+        <!--List all errors in a group at the top-->
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div class="alert alert-error">
+                    <strong>Error!</strong>{{field}}: {{error}}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
     <form action="" method="post" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <p>
@@ -38,6 +48,13 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+        <p>
+            {{ form.procrastinatedTime.label }} <br>
+            {{ form.procrastinatedTime() }}<br>
+            {% for error in form.procrastinatedTime.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
         <p>{{ form.submit() }}</p>
     </form>
 

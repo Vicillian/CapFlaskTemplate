@@ -27,6 +27,9 @@ class User(UserMixin, Document):
     proc = StringField()
     proTime = StringField()
     woTime = StringField()
+    #procrastinated time below
+    procrastinatedTime = StringField()
+
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -74,8 +77,8 @@ class Comment(Document):
     }
 class TimeProc(Document): 
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
-    procTime = StringField()
-    reason = StringField()
+    procrastinatedTime = StringField()
+    #reason = StringField()
     createdate = DateTimeField(default=dt.datetime.utcnow)
 
     meta = {

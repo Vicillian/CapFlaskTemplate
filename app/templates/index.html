@@ -2,12 +2,108 @@
 
 {% block body %}
 
-<center><h1><center>Do you like procrastination??</center></h1>
-<p>This is Vic's website for fighting against procrastination.<br>
-    Below is a picture about my website's purpose.</p>
-<img src="/static/purpose.png" style="width:500px;height:300px;"></center>
+<h1>Do you like procrastination??</h1><p class="ohdeargod">No i don't!</p><br>
+    <center><h4>Do you want some way to understand the extent that you procrastinate for?</h4><p class="ohdeargod">Yes. I know I need help. oh god someone help me. I need a therapist...</p></center><br>
+        <div class="right"><h6>Do you need help fighting your procrastination???</h6><p class="ohdeargod">I need help with more than just that :(</p> </div>
+
+    <button onclick="topFunction()" id="myBtn">Top</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p id="clickIt">Read the above and want some help? Click this not suspicious button for the mentioned help! ---></p>
+    <br>_____________________________________________________________________________________________________________________________________________________________________________
+    <br>
+    <br>
+    <center><h3>Wow hi! Looks like you clicked the button!</h3></center><br>
+    <h4 class="introPara"> So you need help huh? Well this website is just for <b><i>you</i></b>!<br> On the navbar above we have forums
+      for people to talk about<br> and ask for help on how to deal with their procrastination.<br>
+      We have:
+    </h4>
+    <h5 class="introList">
+    <ol>
+      <li>Posts and Stuff: Talk about procrastination with others!</li>
+      <li>Profile: Customize your profile!</li>
+      <li>Time Confessions: CONFESS YOUR SINS</li>
+    </ol>
+  </h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+Hey don't get distracted! This is the bottom of the page!
 
 <style>
 p    {color: black;}
+body {background-color: #add3f0;}
+.right {text-align: right}
+.ohdeargod {color: #add3f0;}
+.introPara {text-align:center;}
+.introList {
+  text-align:center;
+  list-style-position: inside;}
+#clickIt {
+    text-align:right;
+    position: relative; right: 30px;
+    position: relative; bottom: 5px;}
+
+#myBtn {
+  /*display: none; */ /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
 </style>
+<script>
+
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop < -10) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 620; // For Safari
+  document.documentElement.scrollTop = 620; // For Chrome, Firefox, IE and Opera
+}
+
+
+</script>
 {% endblock %}

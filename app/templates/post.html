@@ -4,10 +4,10 @@
 
 {% if post %}
 
-{{moment(post.createdate).calendar()}} by {{post.author.username}} 
-{% if post.modifydate %}
+{{moment(post.createdate).calendar()}} Written by {{post.author.username}} 
+<!--{% if post.modifydate %}
     modified {{moment(post.modifydate).calendar()}}
-{% endif %}
+{% endif %}-->
 <br>
     {% if post.author == current_user %}
         <a data-toggle="tooltip" data-placement="top" title="Delete Post" href="/post/delete/{{post.id}}">
